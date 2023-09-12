@@ -1,0 +1,10 @@
+﻿@using Microfrontend.Domain.ComponentInterfaces;
+
+@implements ISayHello
+
+<h3>Hello @Name from LibraryOne</h3>
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+}

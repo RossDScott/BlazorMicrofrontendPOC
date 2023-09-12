@@ -1,0 +1,27 @@
+{
+  "MicrofrontendRegistration": {
+    "Local": [
+      {
+        "Name": "Test One",
+        "AssemblyPath": "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryOne\\bin\\Debug\\net7.0\\LibraryOne.dll",
+        "MenuItems": [
+          {
+            "Name": "Page 1",
+            "Path": "/one/page1"
+          },
+          {
+            "Name": "Page 2",
+            "Path": "/one/page2"
+          }
+        ]
+      },
+      {
+        "Name": "Test Two",
+        "AssemblyPath": "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryTwo\\bin\\Debug\\net7.0\\LibraryTwo.dll",
+        "DependencyPaths": [
+          "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryTwo\\bin\\Debug\\net7.0\\MudBlazor.dll"
+        ]
+      }
+    ]
+  }
+}

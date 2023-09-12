@@ -1,0 +1,57 @@
+﻿@page "/"
+@using System.Runtime.Loader;
+@using HostSite.Microfrontend;
+@using global::Microfrontend.Domain.ComponentInterfaces;
+
+@inject RegistrationBuilder RegistrationBuilder
+
+<PageTitle>Microfrontend POC</PageTitle>
+
+@if (aSingleComponent != null)
+{
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">These component is loaded by name: LibraryOne.Component1</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <DynamicComponent Type="aSingleComponent"></DynamicComponent>
+        </MudCardContent>
+    </MudCard>
+}
+
+<MudCard Class="mt-3">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h6">These are the components that implement ISayHello</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent>
+        @foreach (var type in sayHellos)
+        {
+            <DynamicComponent Type="type" Parameters="sayHeloParams"></DynamicComponent>
+        }
+    </MudCardContent>
+</MudCard>
+
+
+
+
+@code {
+    Type aSingleComponent;
+
+    Dictionary<string, object> sayHeloParams = new Dictionary<string, object>
+    {
+        {"Name", "Ross"}
+    };
+    IEnumerable<Type> sayHellos = Enumerable.Empty<Type>();
+
+    protected override void OnInitialized()
+    {
+        aSingleComponent = RegistrationBuilder.FetchExportedTypeByFullName("LibraryOne.Component1");
+        sayHellos = RegistrationBuilder.FetchExportedTypesFor<ISayHello>();
+
+        base.OnInitialized();
+    }
+}

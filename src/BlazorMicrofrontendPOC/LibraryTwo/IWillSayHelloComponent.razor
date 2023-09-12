@@ -1,0 +1,16 @@
+﻿@using Microfrontend.Domain.ComponentInterfaces;
+
+@implements ISayHello
+
+@inject ISaySomething SaySomething
+
+<MudPaper Class="pa-16 ma-2" Elevation="3">
+    <h3>Well hello there @Name from LibraryTwo, @SaySomething.SaySomething()</h3>
+    <p>I have ISaySomething injected from DI</p>
+</MudPaper>
+
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+}

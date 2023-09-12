@@ -1,0 +1,18 @@
+﻿@using HostSite.Microfrontend;
+
+@inject RegistrationBuilder RegistrationBuilder
+
+<MudNavMenu>
+    <MudNavLink Href="/">Home</MudNavLink>
+    @foreach (var topLevel in RegistrationBuilder.MenuItems)
+    {
+        <MudNavGroup Title="@topLevel.Name" Expanded="true">
+            @foreach (var menuItem in topLevel.Items)
+            {
+                <MudNavLink Href="@menuItem.Path">@menuItem.Name</MudNavLink>
+            }    
+        }
+        </MudNavGroup>
+    }
+
+</MudNavMenu>
