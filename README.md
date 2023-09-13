@@ -9,3 +9,5 @@ Index.razor demonstrates dynamically loading a component either by name or by in
 
 LibraryOne has a component and a couple of Pages in.   
 LibraryTwo has a dependency on a different version of MudBlazor than the HostSite. It also using DI for a local service.
+
+If you want to run this locally you will need to update the AssemblyFolderPaths in MicrofrontendRegistration.json
