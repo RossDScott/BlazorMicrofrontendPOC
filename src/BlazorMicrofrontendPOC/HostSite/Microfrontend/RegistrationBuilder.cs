@@ -40,10 +40,10 @@ public class RegistrationBuilder
     private AssemblyActivation LoadFromLocalFile(LocalMicrofrontRegistration options)
     {
         var context = new AssemblyLoadContext(options.Name);
-        var assembly = context.LoadFromAssemblyPath(options.AssemblyPath);
+        var assembly = context.LoadFromAssemblyPath(Path.Combine(options.AssemblyFolderPath, options.AssemblyFileName));
 
-        var dependencies = options.DependencyPaths?
-            .Select(path => context.LoadFromAssemblyPath(path))
+        var dependencies = options.DependencyFileNames?
+            .Select(fileName => context.LoadFromAssemblyPath(Path.Combine(options.AssemblyFolderPath, fileName)))
             .ToList();
 
         return new AssemblyActivation

@@ -3,7 +3,8 @@
     "Local": [
       {
         "Name": "Test One",
-        "AssemblyPath": "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryOne\\bin\\Debug\\net7.0\\LibraryOne.dll",
+        "AssemblyFolderPath": "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryOne\\bin\\Debug\\net7.0",
+        "AssemblyFileName": "LibraryOne.dll",
         "MenuItems": [
           {
             "Name": "Page 1",
@@ -17,9 +18,10 @@
       },
       {
         "Name": "Test Two",
-        "AssemblyPath": "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryTwo\\bin\\Debug\\net7.0\\LibraryTwo.dll",
-        "DependencyPaths": [
-          "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryTwo\\bin\\Debug\\net7.0\\MudBlazor.dll"
+        "AssemblyFolderPath": "C:\\Dev\\Source\\BlazorMicrofrontendPOC\\src\\BlazorMicrofrontendPOC\\LibraryTwo\\bin\\Debug\\net7.0",
+        "AssemblyFileName": "LibraryTwo.dll",
+        "DependencyFileNames": [
+          "MudBlazor.dll"
         ]
       }
     ]

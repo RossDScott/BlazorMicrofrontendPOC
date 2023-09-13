@@ -9,8 +9,9 @@ public record MicrofrontendRegistrationOptions
 public record LocalMicrofrontRegistration
 {
     public string Name { get; set; }
-    public string AssemblyPath { get; set; }
-    public IEnumerable<string> DependencyPaths { get; set; } = Enumerable.Empty<string>();
+    public string AssemblyFolderPath { get; set; }
+    public string AssemblyFileName { get; set; }
+    public IEnumerable<string> DependencyFileNames { get; set; } = Enumerable.Empty<string>();
     public IEnumerable<MenuItem> MenuItems { get; set; } = Enumerable.Empty<MenuItem>();
 }
 
